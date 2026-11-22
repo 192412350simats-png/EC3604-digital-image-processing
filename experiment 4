@@ -1,0 +1,44 @@
+clc; clear; close all;
+%% Part A: Neighbourhoods of a pixel
+A = magic(5);
+disp('A ='); disp(A);
+r = input('Enter row index (2 to 4): ');
+c = input('Enter column index (2 to 4): ');
+fprintf('Pixel value p(%d,%d) = %d\n', r, c, A(r,c));
+N4 = [A(r-1,c), A(r+1,c), A(r,c-1), A(r,c+1)];
+ND = [A(r-1,c-1), A(r-1,c+1), A(r+1,c-1), A(r+1,c+1)];
+N8 = [N4, ND];
+disp('N4(p) ='); disp(N4);
+disp('ND(p) ='); disp(ND);
+disp('N8(p) ='); disp(N8);
+%% Part B: 4- and 8-connectivity
+BW = logical([1 1 0 0 0 0;
+1 1 0 0 1 0;
+0 0 1 0 1 0;
+0 0 0 1 0 0;
+0 1 0 0 0 1;
+0 1 0 0 0 1]);
+CC4 = bwconncomp(BW, 4);
+CC8 = bwconncomp(BW, 8);
+clc; clear; close all;
+%% Part A: Neighbourhoods of a pixel
+A = magic(5);
+disp('A ='); disp(A);
+r = input('Enter row index (2 to 4): ');
+c = input('Enter column index (2 to 4): ');
+fprintf('Pixel value p(%d,%d) = %d\n', r, c, A(r,c));
+N4 = [A(r-1,c), A(r+1,c), A(r,c-1), A(r,c+1)];
+ND = [A(r-1,c-1), A(r-1,c+1), A(r+1,c-1), A(r+1,c+1)];
+N8 = [N4, ND];
+disp('N4(p) ='); disp(N4);
+disp('ND(p) ='); disp(ND);
+disp('N8(p) ='); disp(N8);
+%% Part B: 4- and 8-connectivity
+BW = logical([1 1 0 0 0 0;
+1 1 0 0 1 0;
+0 0 1 0 1 0;
+0 0 0 1 0 0;
+0 1 0 0 0 1;
+0 1 0 0 0 1]);
+CC4 = bwconncomp(BW, 4);
+CC8 = bwconncomp(BW, 8);
